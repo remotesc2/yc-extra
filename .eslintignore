@@ -1,0 +1,6 @@
+.eslintrc.js
+components/*/__tests__/**/*.js
+components/*/demo/*
+es
+lib
+dist

@@ -1,0 +1,49 @@
+{
+  "name": "yc-extra",
+  "version": "3.0.0",
+  "description": "pipenet component seed",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "test": "jest --config .jest.js",
+    "dist": "antd-tools run dist",
+    "compile": "antd-tools run compile",
+    "clean": "antd-tools run clean",
+    "pub": "npm run compile && npm run dist",
+    "start": "rimraf _site && node ./site/scripts/generateColorLess.js && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
+    "site": "rimraf _site && cross-env NODE_ENV=production bisheng build -c ./site/bisheng.config.js && node ./site/scripts/generateColorLess.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remotesc2/yc-extra.git"
+  },
+  "publishConfig": {
+    "registry": "http://192.168.8.254:8081/repository/npm-private/"
+  },
+  "keywords": [
+    "pipenet",
+    "componenet",
+    "typescript"
+  ],
+  "author": "re",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/remotesc2/yc-extra/issues"
+  },
+  "homepage": "https://github.com/remotesc2/yc-extra#readme",
+  "peerDependencies": {},
+  "devDependencies": {
+    "@types/isomorphic-fetch": "0.0.35",
+    "antd-tools": "^5.1.6",
+    "bisheng-theme-yd": "^1.1.11",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-markdown": "^1.0.0",
+    "jest": "^24.8.0",
+    "stylelint-config-pipenet": "^0.2.0",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "qs": "^6.7.0"
+  }
+}
